@@ -36,8 +36,8 @@ Esta es la forma más sencilla de levantar la aplicación completa.
 
 3. El sistema levantará tres contenedores:
    - **Frontend**: http://localhost:3000
-   - **Backend**: http://localhost:5001
-   - **Base de Datos**: MySQL en el puerto 3307
+   - **Backend**: http://localhost:5000
+   - **Base de Datos**: MySQL en el puerto 3306
 
 ### Comandos útiles de Docker
 
