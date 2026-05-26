@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Contactos</title>
+    <!-- SEO meta tags -->
+    <meta name="description" content="Aplicación moderna para gestionar tus contactos personales.">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Mis Contactos</h1>
+            <button id="btnNuevoContacto" class="btn btn-primary">
+                <span>+</span> Nuevo Contacto
+            </button>
+        </header>
+
+        <main>
+            <div id="messages" class="messages"></div>
+
+            <div class="table-container">
+                <table id="contactosTable">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Dirección</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactosList">
+                        <!-- Los contactos se cargarán aquí dinámicamente -->
+                        <tr><td colspan="5" class="text-center loading">Cargando contactos...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Formulario -->
+    <div id="modalForm" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Nuevo Contacto</h2>
+                <span class="close-btn" id="closeModal">&times;</span>
+            </div>
+            <form id="contactoForm">
+                <input type="hidden" id="contactoId">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" required placeholder="Ej. Juan">
+                </div>
+                
+                <div class="form-group">
+                    <label for="apellido">Apellido *</label>
+                    <input type="text" id="apellido" required placeholder="Ej. Pérez">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" required placeholder="Ej. 555-1234">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Ej. juan@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <textarea id="direccion" rows="3" placeholder="Ej. Calle 123..."></textarea>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btnCancel">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Confirmación Eliminar -->
+    <div id="modalConfirm" class="modal">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h2>Confirmar Eliminación</h2>
+            </div>
+            <p>¿Estás seguro de que deseas eliminar este contacto? Esta acción no se puede deshacer.</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btnCancelDelete">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btnConfirmDelete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
