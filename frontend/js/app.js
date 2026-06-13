@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/contactos';
+const API_URL = `${window.location.protocol}//${window.location.hostname}:5000/api/contactos`;
 
 // Elementos del DOM
 const contactosList = document.getElementById('contactosList');
