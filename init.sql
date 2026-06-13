@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS contactos (
     telefono VARCHAR(20) NOT NULL,
     email VARCHAR(100),
     direccion TEXT,
+    foto_url VARCHAR(255) DEFAULT NULL,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
